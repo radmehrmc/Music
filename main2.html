@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>کسری نو - شعر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #111;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body {
+      padding: 0;
+    }
+
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 600;
+      color: #222;
+    }
+
+    .hero {
+      padding: 3rem 1.2rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      color: #444;
+      margin-top: 1rem;
+      line-height: 2.2rem;
+      direction: rtl;
+      white-space: pre-line;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem 1rem;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      width: 100%;
+      max-width: 320px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+    }
+
+    .card i {
+      font-size: 2rem;
+      color: #00887a;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #777;
+      font-size: 0.9rem;
+      background-color: #f0f0f0;
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 2rem 1rem;
+      }
+
+      .card {
+        padding: 1.2rem;
+      }
+
+      footer {
+        font-size: 0.8rem;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-bolt"></i> شعر کسری نو</h1>
+  </header>
+
+  <section class="hero fade-in">
+    <h2>کسری نو</h2>
+    <p>کسری نو دریای علمه<br>
+راهی به سوی سرزمین دله<br>
+با عشق با شور و با آرزو<br>
+می‌سازیم فردایی با شکوه<br>
+کسری نو طلوع داناییه<br>
+خانه‌ی مهر و روشناییه<br><br>
+
+درس زندگی در، محیط تو<br>
+دانش و بینش در، کلاس تو<br>
+بوی خوش مهر در کوی تو<br>
+خنده‌ی بچه‌ها در هوای تو<br>
+علوم و عمل در مسیر تو<br>
+آینده‌ی سبز در دستان تو<br><br>
+
+کسری نو برای دانایی<br>
+خانه‌ی مهر و روشناییه<br><br>
+
+کسری نو<br>کسری نو<br>کسری نو<br>کسری نو
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Kasra no Sher. All rights reserved. Made by Radmehr
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+      });
+    });
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>

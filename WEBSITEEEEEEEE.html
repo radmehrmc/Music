@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RADMEHR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      background: radial-gradient(circle at center, #111 0%, #000 100%);
+      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+    }
+    .center-container {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #00ffee;
+      text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
+      animation: glow 2s infinite alternate;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .icon {
+      font-size: 3rem;
+      color: #00ffaa;
+      margin-bottom: 1rem;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee; }
+      to { text-shadow: 0 0 20px #00ffee, 0 0 30px #00ffee; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .particles span {
+      position: absolute;
+      display: block;
+      background: #00ffee;
+      opacity: 0.3;
+      border-radius: 50%;
+      animation: drift 10s linear infinite;
+    }
+    @keyframes drift {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="particles">
+    <!-- Floating particles -->
+    <script>
+      const particleContainer = document.querySelector('.particles');
+      for (let i = 0; i < 60; i++) {
+        let span = document.createElement('span');
+        span.style.left = Math.random() * 100 + "vw";
+        span.style.top = Math.random() * 100 + "vh";
+        span.style.animationDelay = Math.random() * 10 + "s";
+        const size = (Math.random() * 4 + 2) + "px";
+        span.style.width = span.style.height = size;
+        particleContainer.appendChild(span);
+      }
+    </script>
+  </div>
+
+  <div class="center-container">
+    <div class="icon"><i class="fas fa-terminal"></i></div>
+    <h1>By radmehr</h1>
+    <p>Kasra No</p>
+  </div>
+
+  <!-- Redirect to main2.html after 2 seconds -->
+  <script>
+    setTimeout(() => {
+      window.location.href = "main2.html";
+    }, 2000);
+  </script>
+
+</body>
+</html>
